@@ -1,15 +1,16 @@
+import 'package:client_authentication_demo/components/bottomLine.dart';
 import 'package:client_authentication_demo/components/textfieldComponent.dart';
-import 'package:client_authentication_demo/forgotPassword.dart';
+import 'package:client_authentication_demo/recoverPasswordForm.dart';
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+class ForgetPassword extends StatefulWidget {
+  const ForgetPassword({Key? key}) : super(key: key);
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<ForgetPassword> createState() => _ForgetPasswordState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _ForgetPasswordState extends State<ForgetPassword> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +23,6 @@ class _LoginScreenState extends State<LoginScreen> {
               colors: [Colors.blue, Colors.white, Colors.white, Colors.white],
             ),
           ),
-          // ignore: sized_box_for_whitespace
           child: SingleChildScrollView(
             child: Container(
               height: MediaQuery.of(context).size.height,
@@ -48,36 +48,50 @@ class _LoginScreenState extends State<LoginScreen> {
                             "Track",
                             textAlign: TextAlign.center,
                             style: TextStyle(
-                              fontSize: 22,
-                              fontStyle: FontStyle.italic,
-                              color: Colors.blue.shade800,
-                            ),
+                                fontSize: 22,
+                                color: Colors.blue.shade800,
+                                fontStyle: FontStyle.italic),
                           ),
                         ],
                       ),
                     ),
                     Positioned(
-                      left: MediaQuery.of(context).size.width / 3.2,
-                      top: MediaQuery.of(context).size.height / 3.5,
-                      child: const Center(
-                        child: Text(
-                          "Bienvenue",
-                          style: TextStyle(
-                              fontSize: 32,
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold),
-                        ),
+                      left: 15,
+                      top: MediaQuery.of(context).size.height / 3.1,
+                      child: Center(
+                        child: Row(children: [
+                          InkWell(
+                            child: Icon(
+                              Icons.arrow_back,
+                              color: Colors.blue.shade900,
+                            ),
+                            onTap: () => {
+                              Navigator.pop(context),
+                            },
+                          ),
+                          Text(
+                            " Recuperation de votre mot de passe",
+                            style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ]),
                       ),
                     ),
                     Positioned(
-                        top: MediaQuery.of(context).size.height / 2.1 - 5,
+                        top: MediaQuery.of(context).size.height / 2.3,
                         left: 15,
-                        child: const Text(
-                          "Se Connecter",
-                          style: TextStyle(
-                              fontSize: 19,
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold),
+                        //Recuperation de votre mot de passe
+                        child: Container(
+                          width: MediaQuery.of(context).size.width / 1.2,
+                          child: const Text(
+                            "inserer un E-mail ou nous pounvons vous onvoyer un code de recuperation",
+                            style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold),
+                          ),
                         )),
                     Positioned(
                       top: MediaQuery.of(context).size.height / 2,
@@ -90,12 +104,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             Padding(
                               padding: const EdgeInsets.symmetric(
                                   vertical: 10, horizontal: 15),
-                              child: TextFieldComponent(labelName: "Username"),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  vertical: 10, horizontal: 15),
-                              child: TextFieldComponent(labelName: "Password"),
+                              child: TextFieldComponent(labelName: "Email"),
                             ),
                           ],
                         ),
@@ -103,7 +112,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     Positioned(
                         left: 15,
-                        bottom: MediaQuery.of(context).size.height / 5,
+                        bottom: MediaQuery.of(context).size.height / 3.1,
                         child: Center(
                           child: ElevatedButton(
                             child: Container(
@@ -112,7 +121,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               child: Center(
                                 child: Padding(
                                   padding: const EdgeInsets.all(14.0),
-                                  child: Text('Acceder'),
+                                  child: Text('Suivant'),
                                 ),
                               ),
                             ),
@@ -130,48 +139,8 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                         )),
                     Positioned(
-                        bottom: 225,
-                        left: 30,
-                        child: Row(
-                          children: [
-                            InkWell(
-                              child: const Text(
-                                "Se Souvenier de moi",
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.blue,
-                                ),
-                              ),
-                              onTap: () => {},
-                            ),
-                            SizedBox(
-                              width: 60,
-                            ),
-                            InkWell(
-                              child: Text(
-                                "mot de passe oublie?",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  color: Colors.blue,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              onTap: () => {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          const ForgetPassword()),
-                                ),
-                              },
-                            ),
-                          ],
-                        )),
-                    Positioned(
-                      bottom: 130,
-                      left: 30,
+                      bottom: MediaQuery.of(context).size.height / 3.6,
+                      left: 20,
                       child: Container(
                         child: Row(
                           children: [
@@ -199,34 +168,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                     ),
-                    Positioned(
-                      left: 50,
-                      bottom: 20,
-                      child: InkWell(
-                        child: Container(
-                            width: MediaQuery.of(context).size.width / 1.2,
-                            child: Row(
-                              children: [
-                                Text(
-                                  "suivre uneexpedition sans se connecter",
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                                SizedBox(
-                                  width: 20,
-                                ),
-                                Icon(
-                                  Icons.arrow_forward,
-                                  size: 25,
-                                )
-                              ],
-                            )),
-                        onTap: () => {},
-                      ),
-                    ),
+                    BottomLine(),
                   ],
                 ),
               ),

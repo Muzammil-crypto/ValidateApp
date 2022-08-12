@@ -1,4 +1,5 @@
 import 'package:client_authentication_demo/LoginScreen.dart';
+import 'package:client_authentication_demo/recoverPasswordForm.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginScreen(),
+      home: RecoveryFromScreen(),
     );
   }
 }
