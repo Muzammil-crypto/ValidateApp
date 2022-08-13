@@ -1,5 +1,7 @@
 import 'package:client_authentication_demo/LoginScreen.dart';
+import 'package:client_authentication_demo/generateTextFields.dart';
 import 'package:client_authentication_demo/recoverPasswordForm.dart';
+import 'package:client_authentication_demo/sweepAnimation.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,9 +14,9 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: RecoveryFromScreen(),
+      home: LoginScreen(),
     );
   }
 }

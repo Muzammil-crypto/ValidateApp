@@ -1,5 +1,7 @@
+import 'package:client_authentication_demo/components/bottomLine.dart';
 import 'package:client_authentication_demo/components/textfieldComponent.dart';
 import 'package:client_authentication_demo/forgotPassword.dart';
+import 'package:client_authentication_demo/sweepAnimation.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -95,40 +97,44 @@ class _LoginScreenState extends State<LoginScreen> {
                             Padding(
                               padding: const EdgeInsets.symmetric(
                                   vertical: 10, horizontal: 15),
-                              child: TextFieldComponent(labelName: "Password"),
+                              child: TextFieldComponent(
+                                labelName: "Password",
+                              ),
                             ),
                           ],
                         ),
                       ),
                     ),
                     Positioned(
-                        left: 15,
-                        bottom: MediaQuery.of(context).size.height / 5,
-                        child: Center(
-                          child: ElevatedButton(
-                            child: Container(
-                              height: 45,
-                              width: MediaQuery.of(context).size.width / 1.2,
-                              child: Center(
-                                child: Padding(
-                                  padding: const EdgeInsets.all(14.0),
-                                  child: Text('Acceder'),
-                                ),
-                              ),
-                            ),
-                            onPressed: () {},
-                            style: ButtonStyle(
-                              backgroundColor:
-                                  MaterialStateProperty.resolveWith<Color>(
-                                (Set<MaterialState> states) {
-                                  if (states.contains(MaterialState.pressed))
-                                    return Colors.green.shade700;
-                                  return Colors.blue.shade900;
-                                },
-                              ),
-                            ),
-                          ),
-                        )),
+                        bottom: 170, left: 20, child: SweepAnimmatedButton()),
+                    // Positioned(
+                    //     left: 15,
+                    //     bottom: MediaQuery.of(context).size.height / 5,
+                    //     child: Center(
+                    //       child: ElevatedButton(
+                    //         child: Container(
+                    //           height: 45,
+                    //           width: MediaQuery.of(context).size.width / 1.2,
+                    //           child: Center(
+                    //             child: Padding(
+                    //               padding: const EdgeInsets.all(14.0),
+                    //               child: Text('Acceder'),
+                    //             ),
+                    //           ),
+                    //         ),
+                    //         onPressed: () {},
+                    //         style: ButtonStyle(
+                    //           backgroundColor:
+                    //               MaterialStateProperty.resolveWith<Color>(
+                    //             (Set<MaterialState> states) {
+                    //               if (states.contains(MaterialState.pressed))
+                    //                 return Colors.green.shade700;
+                    //               return Colors.blue.shade900;
+                    //             },
+                    //           ),
+                    //         ),
+                    //       ),
+                    //     )),
                     Positioned(
                         bottom: 225,
                         left: 30,
@@ -199,34 +205,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                     ),
-                    Positioned(
-                      left: 50,
-                      bottom: 20,
-                      child: InkWell(
-                        child: Container(
-                            width: MediaQuery.of(context).size.width / 1.2,
-                            child: Row(
-                              children: [
-                                Text(
-                                  "suivre uneexpedition sans se connecter",
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                                SizedBox(
-                                  width: 20,
-                                ),
-                                Icon(
-                                  Icons.arrow_forward,
-                                  size: 25,
-                                )
-                              ],
-                            )),
-                        onTap: () => {},
-                      ),
-                    ),
+                    BottomLine(),
                   ],
                 ),
               ),

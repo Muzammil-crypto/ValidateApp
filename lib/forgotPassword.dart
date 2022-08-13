@@ -1,6 +1,7 @@
 import 'package:client_authentication_demo/components/bottomLine.dart';
 import 'package:client_authentication_demo/components/textfieldComponent.dart';
 import 'package:client_authentication_demo/recoverPasswordForm.dart';
+import 'package:client_authentication_demo/sweepAnimation.dart';
 import 'package:flutter/material.dart';
 
 class ForgetPassword extends StatefulWidget {
@@ -111,33 +112,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                       ),
                     ),
                     Positioned(
-                        left: 15,
-                        bottom: MediaQuery.of(context).size.height / 3.1,
-                        child: Center(
-                          child: ElevatedButton(
-                            child: Container(
-                              height: 45,
-                              width: MediaQuery.of(context).size.width / 1.2,
-                              child: Center(
-                                child: Padding(
-                                  padding: const EdgeInsets.all(14.0),
-                                  child: Text('Suivant'),
-                                ),
-                              ),
-                            ),
-                            onPressed: () {},
-                            style: ButtonStyle(
-                              backgroundColor:
-                                  MaterialStateProperty.resolveWith<Color>(
-                                (Set<MaterialState> states) {
-                                  if (states.contains(MaterialState.pressed))
-                                    return Colors.green.shade700;
-                                  return Colors.blue.shade900;
-                                },
-                              ),
-                            ),
-                          ),
-                        )),
+                        bottom: 270, left: 20, child: SweepAnimmatedButton()),
                     Positioned(
                       bottom: MediaQuery.of(context).size.height / 3.6,
                       left: 20,
@@ -155,13 +130,23 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                             SizedBox(
                               width: 10,
                             ),
-                            Text(
-                              "creer votre compte",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontSize: 12,
-                                color: Colors.blue,
-                                fontWeight: FontWeight.bold,
+                            InkWell(
+                              onTap: () => {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const RecoveryFromScreen()),
+                                )
+                              },
+                              child: Text(
+                                "creer votre compte",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  color: Colors.blue,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ),
                           ],

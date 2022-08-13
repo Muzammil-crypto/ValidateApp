@@ -15,7 +15,8 @@ class TextFieldComponent extends StatelessWidget {
       decoration: InputDecoration(
           isDense: true,
           labelText: labelName,
-          labelStyle: const TextStyle(color: Colors.black, fontSize: 14),
+          labelStyle: const TextStyle(
+              color: Color.fromARGB(255, 11, 55, 150), fontSize: 14),
           border: OutlineInputBorder(
               borderSide: BorderSide.none,
               borderRadius: BorderRadius.circular(10)),

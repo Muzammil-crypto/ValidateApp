@@ -1,4 +1,7 @@
+import 'package:client_authentication_demo/LoginScreen.dart';
 import 'package:client_authentication_demo/components/bottomLine.dart';
+import 'package:client_authentication_demo/generateTextFields.dart';
+import 'package:client_authentication_demo/sweepAnimation.dart';
 import 'package:flutter/material.dart';
 import 'package:client_authentication_demo/components/textfieldComponent.dart';
 import 'package:flutter/material.dart';
@@ -98,11 +101,21 @@ class _RecoveryFromScreenState extends State<RecoveryFromScreen> {
                                 Padding(
                                   padding: const EdgeInsets.only(
                                       top: 3.0, bottom: 5),
-                                  child: Text(
-                                    "Renoyer le code de recurption",
-                                    style: TextStyle(
-                                      fontSize: 14,
-                                      color: Colors.blue,
+                                  child: InkWell(
+                                    onTap: () => {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const TextFieldGenerate()),
+                                      )
+                                    },
+                                    child: Text(
+                                      "Renoyer le code de recurption",
+                                      style: TextStyle(
+                                        fontSize: 14,
+                                        color: Colors.blue,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -139,33 +152,7 @@ class _RecoveryFromScreenState extends State<RecoveryFromScreen> {
                       ),
                     ),
                     Positioned(
-                        left: 15,
-                        bottom: MediaQuery.of(context).size.height / 6,
-                        child: Center(
-                          child: ElevatedButton(
-                            child: Container(
-                              height: 45,
-                              width: MediaQuery.of(context).size.width / 1.2,
-                              child: Center(
-                                child: Padding(
-                                  padding: const EdgeInsets.all(14.0),
-                                  child: Text('Suivant'),
-                                ),
-                              ),
-                            ),
-                            onPressed: () {},
-                            style: ButtonStyle(
-                              backgroundColor:
-                                  MaterialStateProperty.resolveWith<Color>(
-                                (Set<MaterialState> states) {
-                                  if (states.contains(MaterialState.pressed))
-                                    return Colors.green.shade700;
-                                  return Colors.blue.shade900;
-                                },
-                              ),
-                            ),
-                          ),
-                        )),
+                        bottom: 150, left: 20, child: SweepAnimmatedButton()),
                     BottomLine(),
                   ],
                 ),
