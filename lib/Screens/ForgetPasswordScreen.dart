@@ -1,7 +1,9 @@
-import 'package:client_authentication_demo/components/bottomLine.dart';
-import 'package:client_authentication_demo/components/textfieldComponent.dart';
-import 'package:client_authentication_demo/recoverPasswordForm.dart';
-import 'package:client_authentication_demo/sweepAnimation.dart';
+import 'package:client_authentication_demo/components/BottomLine.dart';
+import 'package:client_authentication_demo/components/ClickAbleText.dart';
+import 'package:client_authentication_demo/components/HeaderText.dart';
+import 'package:client_authentication_demo/components/InputTextfield.dart';
+import 'package:client_authentication_demo/Screens/EmailValidateScreen.dart';
+import 'package:client_authentication_demo/components/AnimatedButton.dart';
 import 'package:flutter/material.dart';
 
 class ForgetPassword extends StatefulWidget {
@@ -34,27 +36,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                     Positioned(
                       top: 90,
                       left: MediaQuery.of(context).size.width / 3,
-                      child: Row(
-                        children: [
-                          const Text(
-                            "Fresh",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontSize: 22,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.green,
-                            ),
-                          ),
-                          Text(
-                            "Track",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontSize: 22,
-                                color: Colors.blue.shade800,
-                                fontStyle: FontStyle.italic),
-                          ),
-                        ],
-                      ),
+                      child: HeaderText(),
                     ),
                     Positioned(
                       left: 15,
@@ -130,25 +112,9 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                             SizedBox(
                               width: 10,
                             ),
-                            InkWell(
-                              onTap: () => {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          const RecoveryFromScreen()),
-                                )
-                              },
-                              child: Text(
-                                "creer votre compte",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  color: Colors.blue,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
+                            ClickableOptions(
+                                buttonTitle: "creer votre compte",
+                                pageAddress: RecoveryFromScreen())
                           ],
                         ),
                       ),

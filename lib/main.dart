@@ -1,7 +1,7 @@
-import 'package:client_authentication_demo/LoginScreen.dart';
-import 'package:client_authentication_demo/generateTextFields.dart';
-import 'package:client_authentication_demo/recoverPasswordForm.dart';
-import 'package:client_authentication_demo/sweepAnimation.dart';
+import 'package:client_authentication_demo/Screens/UserLoginScreen.dart';
+import 'package:client_authentication_demo/Screens/UserConfirmationScreen.dart';
+import 'package:client_authentication_demo/Screens/EmailValidateScreen.dart';
+import 'package:client_authentication_demo/components/AnimatedButton.dart';
 import 'package:flutter/material.dart';
 
 void main() {

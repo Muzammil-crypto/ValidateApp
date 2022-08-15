@@ -1,8 +1,12 @@
-import 'package:client_authentication_demo/components/bottomLine.dart';
-import 'package:client_authentication_demo/components/textfieldComponent.dart';
-import 'package:client_authentication_demo/forgotPassword.dart';
-import 'package:client_authentication_demo/sweepAnimation.dart';
+import 'package:client_authentication_demo/components/HeaderText.dart';
 import 'package:flutter/material.dart';
+
+import 'package:client_authentication_demo/Screens/ForgetPasswordScreen.dart';
+import 'package:client_authentication_demo/components/AnimatedButton.dart';
+import 'package:client_authentication_demo/components/BottomLine.dart';
+import 'package:client_authentication_demo/components/InputTextfield.dart';
+
+import '../components/ClickAbleText.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -24,7 +28,6 @@ class _LoginScreenState extends State<LoginScreen> {
               colors: [Colors.blue, Colors.white, Colors.white, Colors.white],
             ),
           ),
-          // ignore: sized_box_for_whitespace
           child: SingleChildScrollView(
             child: Container(
               height: MediaQuery.of(context).size.height,
@@ -33,31 +36,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Stack(
                   children: [
                     Positioned(
-                      top: 90,
-                      left: MediaQuery.of(context).size.width / 3,
-                      child: Row(
-                        children: [
-                          const Text(
-                            "Fresh",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontSize: 22,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.green,
-                            ),
-                          ),
-                          Text(
-                            "Track",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontSize: 22,
-                              fontStyle: FontStyle.italic,
-                              color: Colors.blue.shade800,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                        top: 90,
+                        left: MediaQuery.of(context).size.width / 3,
+                        child: HeaderText()),
                     Positioned(
                       left: MediaQuery.of(context).size.width / 3.2,
                       top: MediaQuery.of(context).size.height / 3.5,
@@ -107,34 +88,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     Positioned(
                         bottom: 170, left: 20, child: SweepAnimmatedButton()),
-                    // Positioned(
-                    //     left: 15,
-                    //     bottom: MediaQuery.of(context).size.height / 5,
-                    //     child: Center(
-                    //       child: ElevatedButton(
-                    //         child: Container(
-                    //           height: 45,
-                    //           width: MediaQuery.of(context).size.width / 1.2,
-                    //           child: Center(
-                    //             child: Padding(
-                    //               padding: const EdgeInsets.all(14.0),
-                    //               child: Text('Acceder'),
-                    //             ),
-                    //           ),
-                    //         ),
-                    //         onPressed: () {},
-                    //         style: ButtonStyle(
-                    //           backgroundColor:
-                    //               MaterialStateProperty.resolveWith<Color>(
-                    //             (Set<MaterialState> states) {
-                    //               if (states.contains(MaterialState.pressed))
-                    //                 return Colors.green.shade700;
-                    //               return Colors.blue.shade900;
-                    //             },
-                    //           ),
-                    //         ),
-                    //       ),
-                    //     )),
                     Positioned(
                         bottom: 225,
                         left: 30,
@@ -151,27 +104,12 @@ class _LoginScreenState extends State<LoginScreen> {
                               ),
                               onTap: () => {},
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 60,
                             ),
-                            InkWell(
-                              child: Text(
-                                "mot de passe oublie?",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  color: Colors.blue,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              onTap: () => {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          const ForgetPassword()),
-                                ),
-                              },
+                            ClickableOptions(
+                              buttonTitle: "mot de passe oublie?",
+                              pageAddress: const ForgetPassword(),
                             ),
                           ],
                         )),
@@ -188,9 +126,6 @@ class _LoginScreenState extends State<LoginScreen> {
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black,
                               ),
-                            ),
-                            SizedBox(
-                              width: 10,
                             ),
                             Text(
                               "creer votre compte",

@@ -1,4 +1,4 @@
-import 'package:client_authentication_demo/components/clipper.dart';
+import 'package:client_authentication_demo/components/ShapeWidget/ButtonShapeClipper.dart';
 import 'package:flutter/material.dart';
 
 class SweepAnimmatedButton extends StatefulWidget {

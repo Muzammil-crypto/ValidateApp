@@ -1,9 +1,11 @@
-import 'package:client_authentication_demo/LoginScreen.dart';
-import 'package:client_authentication_demo/components/bottomLine.dart';
-import 'package:client_authentication_demo/generateTextFields.dart';
-import 'package:client_authentication_demo/sweepAnimation.dart';
+import 'package:client_authentication_demo/Screens/UserLoginScreen.dart';
+import 'package:client_authentication_demo/components/BottomLine.dart';
+import 'package:client_authentication_demo/Screens/UserConfirmationScreen.dart';
+import 'package:client_authentication_demo/components/AnimatedButton.dart';
+import 'package:client_authentication_demo/components/ClickAbleText.dart';
+import 'package:client_authentication_demo/components/HeaderText.dart';
 import 'package:flutter/material.dart';
-import 'package:client_authentication_demo/components/textfieldComponent.dart';
+import 'package:client_authentication_demo/components/InputTextfield.dart';
 import 'package:flutter/material.dart';
 
 class RecoveryFromScreen extends StatefulWidget {
@@ -36,27 +38,7 @@ class _RecoveryFromScreenState extends State<RecoveryFromScreen> {
                     Positioned(
                       top: 90,
                       left: MediaQuery.of(context).size.width / 3,
-                      child: Row(
-                        children: [
-                          const Text(
-                            "Fresh",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontSize: 22,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.green,
-                            ),
-                          ),
-                          Text(
-                            "Track",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontSize: 22,
-                                color: Colors.blue.shade800,
-                                fontStyle: FontStyle.italic),
-                          ),
-                        ],
-                      ),
+                      child: HeaderText(),
                     ),
                     Positioned(
                       left: 15,
@@ -101,23 +83,10 @@ class _RecoveryFromScreenState extends State<RecoveryFromScreen> {
                                 Padding(
                                   padding: const EdgeInsets.only(
                                       top: 3.0, bottom: 5),
-                                  child: InkWell(
-                                    onTap: () => {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                const TextFieldGenerate()),
-                                      )
-                                    },
-                                    child: Text(
-                                      "Renoyer le code de recurption",
-                                      style: TextStyle(
-                                        fontSize: 14,
-                                        color: Colors.blue,
-                                      ),
-                                    ),
-                                  ),
+                                  child: ClickableOptions(
+                                      buttonTitle:
+                                          "Renoyer le code de recurption",
+                                      pageAddress: TextFieldGenerate()),
                                 ),
                               ],
                             ))),
