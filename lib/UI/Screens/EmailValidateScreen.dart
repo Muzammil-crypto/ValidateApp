@@ -1,12 +1,14 @@
 import 'package:client_authentication_demo/Screens/UserLoginScreen.dart';
-import 'package:client_authentication_demo/components/BottomLine.dart';
 import 'package:client_authentication_demo/Screens/UserConfirmationScreen.dart';
-import 'package:client_authentication_demo/components/AnimatedButton.dart';
-import 'package:client_authentication_demo/components/ClickAbleText.dart';
-import 'package:client_authentication_demo/components/HeaderText.dart';
+
 import 'package:flutter/material.dart';
-import 'package:client_authentication_demo/components/InputTextfield.dart';
 import 'package:flutter/material.dart';
+
+import '../Components/AnimatedButton.dart';
+import '../Components/BottomLine.dart';
+import '../Components/ClickAbleText.dart';
+import '../Components/HeaderText.dart';
+import '../Components/InputTextfield.dart';
 
 class RecoveryFromScreen extends StatefulWidget {
   const RecoveryFromScreen({Key? key}) : super(key: key);

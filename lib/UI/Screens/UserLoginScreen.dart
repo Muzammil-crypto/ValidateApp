@@ -1,12 +1,12 @@
-import 'package:client_authentication_demo/components/HeaderText.dart';
 import 'package:flutter/material.dart';
 
 import 'package:client_authentication_demo/Screens/ForgetPasswordScreen.dart';
-import 'package:client_authentication_demo/components/AnimatedButton.dart';
-import 'package:client_authentication_demo/components/BottomLine.dart';
-import 'package:client_authentication_demo/components/InputTextfield.dart';
 
-import '../components/ClickAbleText.dart';
+import '../Components/AnimatedButton.dart';
+import '../Components/BottomLine.dart';
+import '../Components/ClickAbleText.dart';
+import '../Components/HeaderText.dart';
+import '../Components/InputTextfield.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
